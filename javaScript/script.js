@@ -13,8 +13,7 @@ for(var i =0; i< modeButtons.length;  i++){
         modeButtons[0].classList.remove("selected");
         modeButtons[1].classList.remove("selected");
         this.classList.add("selected"); 
-        
-        this.textContent ==="Easy" ? numSquares =3; numSquares =6; 
+        this.textContent === "Easy" ? numSquares =3: numSquares = 6; 
          reset(); 
 //        if(this.textContent === "Easy"){
 //            numSquares = 3; 
@@ -27,7 +26,7 @@ for(var i =0; i< modeButtons.length;  i++){
     //pick new colors 
     //pick a new pickedColor 
     //Update page to reflect changes 
-    })
+    });
 }
 
 function reset(){
@@ -41,6 +40,7 @@ function reset(){
     //Change colors of sqaures
     for(var i=0; i< squares.length; i++){
         if(colors[i]){
+        squares[i].style.display = "block"; 
         squares[i].style.backgroundColor = colors[i]; 
     }else {
         suqares[i].style.display="none";
@@ -80,20 +80,21 @@ function reset(){
 //    
 //});
 resetButton.addEventListener("click", function(){
-    //Generate all new colors
-    colors= generateRandomColors(numSquares);
-    //pick a new random color from array
-    pickedColor = pickColor();
-    //Change colorDisplay to match picked color 
-    colorDisplay.textContent = pickedColor; 
-    this.textContent = "New Colors"; 
-    messageDisplay.textContent="";
-    //Change colors of sqaures
-    for(var i=0; i< squares.length; i++){
-        squares[i].style.backgroundColor = colors[i]; 
-        
-    }
-    h1.style.backgroundColor = "steelblue"; 
+        reset();
+//    //Generate all new colors
+//    colors= generateRandomColors(numSquares);
+//    //pick a new random color from array
+//    pickedColor = pickColor();
+//    //Change colorDisplay to match picked color 
+//    colorDisplay.textContent = pickedColor; 
+//    this.textContent = "New Colors"; 
+//    messageDisplay.textContent="";
+//    //Change colors of sqaures
+//    for(var i=0; i< squares.length; i++){
+//        squares[i].style.backgroundColor = colors[i]; 
+//        
+//    }
+//    h1.style.backgroundColor = "steelblue"; 
 })
 colorDisplay.textContent = pickedColor;
 
@@ -125,6 +126,7 @@ function changeColors(color){
         squares[i].style.backgroundColor = color;    
     }
 }
+//This function is going to pick a number of the six or three squares not an actually RGB color 
 function pickColor(){
     var random = Math.floor(Math.random() * colors.length);
     return colors[random]; 
