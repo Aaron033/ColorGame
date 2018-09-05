@@ -34,7 +34,7 @@ function init() {
 
 function setupModeButtons() {
     for (var i = 0; i < modeButtons.length; i++) {
-        modeButtons[i].addEventListener("click", function () {
+        modeButtons[i].addEventListener("click", function() {
                     modeButtons[0].classList.remove("selected");
                     modeButtons[1].classList.remove("selected");
                     this.classList.add("selected");
@@ -44,11 +44,11 @@ function setupModeButtons() {
     }
 }
 
-                function setupSquares() {
+                function setUpSquares() {
 
                     for (var i = 0; i < squares.length; i++) {
                         //Add click listener to squares
-                        squares[i].addEventListener("click", function () {
+                        squares[i].addEventListener("click", function() {
                             //Grab color of clicked square
                             var clickedColor = this.style.backgroundColor;
                             //Compare color to pickedColor 
@@ -82,7 +82,7 @@ function setupModeButtons() {
                             squares[i].style.display = "block";
                             squares[i].style.backgroundColor = colors[i];
                         } else {
-                            suqares[i].style.display = "none";
+                            squares[i].style.display = "none";
                         }
                     }
                     h1.style.backgroundColor = "steelblue";
@@ -118,7 +118,7 @@ function setupModeButtons() {
                 //    }
                 //    
                 //});
-                resetButton.addEventListener("click", function () {
+                resetButton.addEventListener("click", function() {
                     reset();
                     //    //Generate all new colors
                     //    colors= generateRandomColors(numSquares);
